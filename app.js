@@ -30,4 +30,8 @@ httpserver.on('request', (req, res) => {
   res.end(JSON.stringify(date));
 });
 
-httpserver.listen(8000);
+let port = process.env.PORT || 3000;
+
+httpserver.listen(port, function() {
+  console.log('Listening on ' + port);
+});
